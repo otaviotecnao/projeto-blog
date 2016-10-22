@@ -5,12 +5,10 @@
 {% endblock %}
 
 {% block body %}
-  <h1> Sobre nos</h1>
+  {% for s in sobre %}
+  <h1>{{ s.titulo}}</h1>
   <p>
-    SOMOS OS MELHORES PROGRAMADORES DO BRASIL... VAMOS PRA ALEMANHA.
-    SOMOS OS MELHORES PROGRAMADORES DO BRASIL... VAMOS PRA ALEMANHA.
-    SOMOS OS MELHORES PROGRAMADORES DO BRASIL... VAMOS PRA ALEMANHA.
-    SOMOS OS MELHORES PROGRAMADORES DO BRASIL... VAMOS PRA ALEMANHA.
-    SOMOS OS MELHORES PROGRAMADORES DO BRASIL... VAMOS PRA ALEMANHA.
+    {{ s.descricao|safe }}
   </P>
+  {% endfor %}
 {% endblock %}

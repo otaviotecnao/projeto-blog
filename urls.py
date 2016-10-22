@@ -22,6 +22,6 @@ from blog.sobre import urls as sobre_urls
 urlpatterns = [
 	url(r'', include(core_urls, namespace = 'core')),
 	url(r'^sobre/', include(sobre_urls, namespace = 'sobre')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', admin.site.urls),
 ]
