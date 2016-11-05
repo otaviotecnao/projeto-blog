@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from blog.core import urls as core_urls
 from blog.sobre import urls as sobre_urls
+from blog.posts import urls as posts_urls
 
 urlpatterns = [
 	url(r'', include(core_urls, namespace = 'core')),
 	url(r'^sobre/', include(sobre_urls, namespace = 'sobre')),
+	url(r'^posts/', include(sobre_urls, namespace = 'posts')),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
