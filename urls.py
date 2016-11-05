@@ -25,7 +25,7 @@ from blog.posts import urls as posts_urls
 urlpatterns = [
 	url(r'', include(core_urls, namespace = 'core')),
 	url(r'^sobre/', include(sobre_urls, namespace = 'sobre')),
-	url(r'^posts/', include(sobre_urls, namespace = 'posts')),
+	url(r'^posts/', include(posts_urls, namespace = 'posts')),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
